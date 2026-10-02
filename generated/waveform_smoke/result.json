@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "coverage_database": "F:\\ieee workshop\\agentic-rtl\\generated\\waveform_smoke\\coverage.dat",
+  "build_directory": "/tmp/agentic-rtl-verilator-28240",
+  "code_coverage": {
+    "status": "measured",
+    "tool": "verilator",
+    "database": "F:\\ieee workshop\\agentic-rtl\\generated\\waveform_smoke\\coverage.dat",
+    "metrics": {
+      "toggle": {
+        "covered": 64,
+        "total": 85,
+        "percentage": 75.29
+      },
+      "line": {
+        "covered": 17,
+        "total": 18,
+        "percentage": 94.44
+      },
+      "branch": {
+        "covered": 18,
+        "total": 20,
+        "percentage": 90.0
+      },
+      "assertion": {
+        "covered": 18,
+        "total": 18,
+        "percentage": 100.0,
+        "measurement": "runtime_assertion_monitor"
+      }
+    },
+    "percentage": 80.49
+  }
+}

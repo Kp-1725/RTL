@@ -1,0 +1,39 @@
+COMMAND:
+cd '/mnt/f/ieee workshop/agentic-rtl/generated/waveform_smoke' && rm -rf /tmp/agentic-rtl-verilator-28240 && mkdir -p /tmp/agentic-rtl-verilator-28240 && cp '/mnt/f/ieee workshop/agentic-rtl/generated/waveform_smoke/verilator_main.cpp' /tmp/agentic-rtl-verilator-28240/verilator_main.cpp && verilator --cc --coverage --assert --timing --trace --Wno-fatal -DVERILATOR_COVERAGE --top-module tb_fifo --Mdir /tmp/agentic-rtl-verilator-28240 --exe /tmp/agentic-rtl-verilator-28240/verilator_main.cpp --build -o /tmp/agentic-rtl-verilator-28240/sim_tb_fifo '/mnt/f/ieee workshop/agentic-rtl/designs/fifo/reference/fifo.sv' '/mnt/f/ieee workshop/agentic-rtl/designs/fifo/reference/tb_fifo.sv' && /tmp/agentic-rtl-verilator-28240/sim_tb_fifo
+
+RETURN CODE: 0
+
+make: Entering directory '/tmp/agentic-rtl-verilator-28240'
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -fcoroutines -Os  -c -o verilator_main.o /tmp/agentic-rtl-verilator-28240/verilator_main.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -fcoroutines -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -fcoroutines -c -o verilated_cov.o /usr/share/verilator/include/verilated_cov.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -fcoroutines -c -o verilated_vcd_c.o /usr/share/verilator/include/verilated_vcd_c.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -fcoroutines -c -o verilated_timing.o /usr/share/verilator/include/verilated_timing.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -fcoroutines -c -o verilated_threads.o /usr/share/verilator/include/verilated_threads.cpp
+python3 /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_fifo.cpp Vtb_fifo___024root__DepSet_ha546d0c1__0.cpp Vtb_fifo___024root__DepSet_h4c66ebd6__0.cpp Vtb_fifo__Trace__0.cpp Vtb_fifo___024root__Slow.cpp Vtb_fifo___024root__DepSet_ha546d0c1__0__Slow.cpp Vtb_fifo___024root__DepSet_h4c66ebd6__0__Slow.cpp Vtb_fifo__Syms.cpp Vtb_fifo__Trace__0__Slow.cpp Vtb_fifo__TraceDecls__0__Slow.cpp > Vtb_fifo__ALL.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -fcoroutines -c -o Vtb_fifo__ALL.o Vtb_fifo__ALL.cpp
+echo "" > Vtb_fifo__ALL.verilator_deplist.tmp
+g++    verilator_main.o verilated.o verilated_cov.o verilated_vcd_c.o verilated_timing.o verilated_threads.o Vtb_fifo__ALL.a    -pthread -lpthread -latomic   -o /tmp/agentic-rtl-verilator-28240/sim_tb_fifo
+rm Vtb_fifo__ALL.verilator_deplist.tmp
+make: Leaving directory '/tmp/agentic-rtl-verilator-28240'
+- V e r i l a t i o n   R e p o r t: Verilator 5.032 2025-01-01 rev (Debian 5.032-1)
+- Verilator: Built from 0.042 MB sources in 3 modules, into 0.206 MB in 10 C++ files needing 0.000 MB
+- Verilator: Walltime 7.550 s (elab=0.001, cvt=0.008, bld=7.524); cpu 0.015 s on 1 threads; alloced 9.477 MB
+PASS: FIFO reference tests completed (21 checks).
+ASSERTION_COVERAGE checks=18 passes=18
+- /mnt/f/ieee workshop/agentic-rtl/designs/fifo/reference/tb_fifo.sv:205: Verilog $finish
+
+%Warning-WIDTHEXPAND: /mnt/f/ieee workshop/agentic-rtl/designs/fifo/reference/fifo.sv:26:26: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'count' generates 3 bits.
+                                                                                           : ... note: In instance 'tb_fifo.dut'
+   26 |     assign full = (count == DEPTH);
+      |                          ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.032
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /mnt/f/ieee workshop/agentic-rtl/designs/fifo/reference/fifo.sv:38:35: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'write_pointer' generates 2 bits.
+                                                                                           : ... note: In instance 'tb_fifo.dut'
+   38 |                 if (write_pointer == DEPTH - 1) begin
+      |                                   ^~
+%Warning-WIDTHEXPAND: /mnt/f/ieee workshop/agentic-rtl/designs/fifo/reference/fifo.sv:47:34: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'read_pointer' generates 2 bits.
+                                                                                           : ... note: In instance 'tb_fifo.dut'
+   47 |                 if (read_pointer == DEPTH - 1) begin
+      |                                  ^~

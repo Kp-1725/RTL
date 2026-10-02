@@ -1,0 +1,11 @@
+COMMAND:
+vvp F:\ieee workshop\agentic-rtl\generated\multi_bug_demo\iteration_001\simulation\simulation.vvp
+
+RETURN CODE: 1
+
+STDOUT:
+VCD info: dumpfile fifo_agent.vcd opened for output.
+FATAL: F:\ieee workshop\agentic-rtl\generated\multi_bug_demo\iteration_001\tests\tb_fifo.sv:35: FAIL: full mismatch
+       Time: 16  Scope: tb_fifo.check_flags
+
+STDERR:

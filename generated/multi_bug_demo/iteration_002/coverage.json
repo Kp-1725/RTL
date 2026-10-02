@@ -1,0 +1,154 @@
+{
+  "measurement_type": "derived_test_scenario",
+  "tool": null,
+  "percentage": 100.0,
+  "covered": [
+    "empty_underflow",
+    "single_write_read",
+    "full_and_overflow",
+    "drain_to_empty",
+    "simultaneous_read_write",
+    "reset_during_operation"
+  ],
+  "uncovered": [],
+  "coverage_breakdown": {
+    "functional": {
+      "status": "measured",
+      "type": "derived_test_scenario",
+      "percentage": 100.0,
+      "covered": [
+        "empty_underflow",
+        "single_write_read",
+        "full_and_overflow",
+        "drain_to_empty",
+        "simultaneous_read_write",
+        "reset_during_operation"
+      ],
+      "uncovered": [],
+      "note": "Generated from explicit FIFO scenario checks in the testbench."
+    },
+    "code": {
+      "status": "not_measured",
+      "type": "statement_branch",
+      "percentage": null,
+      "covered": [],
+      "uncovered": [],
+      "metrics": {},
+      "tool": null,
+      "note": "No HDL coverage tool is configured, so statement/branch coverage is not measured."
+    },
+    "assertion": {
+      "status": "not_measured",
+      "type": "property_assertion",
+      "percentage": null,
+      "covered": [],
+      "uncovered": [],
+      "metrics": {},
+      "tool": null,
+      "note": "Assertion/property coverage was not emitted by the selected simulator."
+    }
+  },
+  "note": "Functional scenarios, Verilator RTL code metrics, and runtime assertion metrics are reported separately.",
+  "requirements": {
+    "module_name": "fifo",
+    "inputs": [
+      {
+        "name": "clk",
+        "direction": "input",
+        "width": "1",
+        "description": "Synchronous clock"
+      },
+      {
+        "name": "rst",
+        "direction": "input",
+        "width": "1",
+        "description": "Synchronous active-high reset"
+      },
+      {
+        "name": "wr_en",
+        "direction": "input",
+        "width": "1",
+        "description": "Write enable"
+      },
+      {
+        "name": "rd_en",
+        "direction": "input",
+        "width": "1",
+        "description": "Read enable"
+      },
+      {
+        "name": "data_in",
+        "direction": "input",
+        "width": "32",
+        "description": "Input data"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "data_out",
+        "direction": "output",
+        "width": "32",
+        "description": "Output data"
+      },
+      {
+        "name": "full",
+        "direction": "output",
+        "width": "1",
+        "description": "FIFO full flag"
+      },
+      {
+        "name": "empty",
+        "direction": "output",
+        "width": "1",
+        "description": "FIFO empty flag"
+      }
+    ],
+    "parameters": {
+      "DATA_WIDTH": 32,
+      "DEPTH": 6
+    },
+    "functional_requirements": [
+      "Store 32-bit data values in FIFO order.",
+      "Support a configurable FIFO depth of 6.",
+      "Apply a synchronous reset that clears FIFO state and output data.",
+      "Accept writes only when the FIFO is not full.",
+      "Accept reads only when the FIFO is not empty.",
+      "Assert full when the FIFO contains its configured depth.",
+      "Assert empty when the FIFO contains no entries.",
+      "Support simultaneous accepted read and write operations."
+    ],
+    "corner_cases": [
+      "Read from an empty FIFO without changing state.",
+      "Write to a full FIFO without changing stored data.",
+      "Fill the FIFO to capacity.",
+      "Drain the FIFO to empty.",
+      "Assert reset while the FIFO contains data."
+    ],
+    "verification_requirements": [
+      "Verify FIFO ordering with multiple writes and reads.",
+      "Verify full and empty flags at their boundaries.",
+      "Verify overflow and underflow prevention.",
+      "Verify simultaneous read/write behavior.",
+      "Verify reset during active operation."
+    ],
+    "scenarios": [
+      "empty_underflow",
+      "single_write_read",
+      "full_and_overflow",
+      "drain_to_empty",
+      "simultaneous_read_write",
+      "reset_during_operation"
+    ],
+    "assertions": [
+      "full_and_empty_are_mutually_exclusive",
+      "read_does_not_change_empty_fifo",
+      "write_does_not_change_full_fifo"
+    ],
+    "coverage_targets": {
+      "functional_requirements": 100,
+      "corner_cases": 100,
+      "statement_coverage": "tool-measured",
+      "branch_coverage": "tool-measured"
+    }
+  }
+}

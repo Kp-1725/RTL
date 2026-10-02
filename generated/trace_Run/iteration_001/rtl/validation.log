@@ -1,0 +1,11 @@
+COMMAND: iverilog -g2012 -Wall -t null F:\ieee workshop\agentic-rtl\generated\trace_Run\iteration_001\rtl\FIFO_32bit_6depth.sv
+RETURN CODE: 4
+
+STDOUT:
+
+STDERR:
+F:\ieee workshop\agentic-rtl\generated\trace_Run\iteration_001\rtl\FIFO_32bit_6depth.sv:21: error: full Unable to assign to unresolved wires.
+F:\ieee workshop\agentic-rtl\generated\trace_Run\iteration_001\rtl\FIFO_32bit_6depth.sv:22: error: empty Unable to assign to unresolved wires.
+F:\ieee workshop\agentic-rtl\generated\trace_Run\iteration_001\rtl\FIFO_32bit_6depth.sv:28: error: full Unable to assign to unresolved wires.
+F:\ieee workshop\agentic-rtl\generated\trace_Run\iteration_001\rtl\FIFO_32bit_6depth.sv:35: error: empty Unable to assign to unresolved wires.
+4 error(s) during elaboration.

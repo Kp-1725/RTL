@@ -1,0 +1,6 @@
+COMMAND: iverilog -g2012 -Wall -t null F:\ieee workshop\agentic-rtl\generated\multi_bug_demo\iteration_002\rtl\fifo.sv
+RETURN CODE: 0
+
+STDOUT:
+
+STDERR:

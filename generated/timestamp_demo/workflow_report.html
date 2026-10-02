@@ -1,0 +1,253 @@
+
+        <html>
+        <head><meta charset="utf-8"><title>Agentic RTL Workflow Report</title></head>
+        <body style="font-family:Arial,sans-serif; margin:32px; background:#0f172a; color:#e2e8f0;">
+            <h1 style="color:#7dd3fc;">Agentic RTL Workflow Report</h1>
+            <div style="background:#111827; border:1px solid #334155; border-radius:10px; padding:20px; margin-bottom:20px;">
+                <h2 style="margin-top:0; color:#fbbf24;">Panel Summary</h2>
+                <p><strong>Title:</strong> Agentic RTL Demo: fifo Design Loop</p>
+                <p><strong>Status:</strong> PASS</p>
+                <p><strong>Module:</strong> fifo</p>
+                <p>This agentic RTL workflow turns a plain specification into an executable hardware design loop. It generated a fifo implementation, validated it with the selected simulator, and recovered from a real failing condition by tracing the root cause and producing a corrected iteration. The workflow stopped with reason: derived scenario coverage target reached; RTL code coverage still requires a coverage tool.</p>
+            </div>
+            <h3 style="color:#a7f3d0;">Demo Highlights</h3>
+            <ul>
+                <li>Converted a natural-language hardware spec into executable RTL and self-checking SystemVerilog tests.</li><li>Used a real compile-and-sim loop to catch a design failure before regenerating the corrected design.</li><li>Persisted each iteration as versioned artifacts so the debugging trail remains auditable.</li><li>Produced honest derived scenario coverage and a panel-ready narrative instead of fake metrics.</li>
+            </ul>
+            <pre style="white-space:pre-wrap; background:#020617; padding:16px; border-radius:8px;">{
+  "requirements": {
+    "module_name": "fifo",
+    "inputs": [
+      {
+        "name": "clk",
+        "direction": "input",
+        "width": "1",
+        "description": "Synchronous clock"
+      },
+      {
+        "name": "rst",
+        "direction": "input",
+        "width": "1",
+        "description": "Synchronous active-high reset"
+      },
+      {
+        "name": "wr_en",
+        "direction": "input",
+        "width": "1",
+        "description": "Write enable"
+      },
+      {
+        "name": "rd_en",
+        "direction": "input",
+        "width": "1",
+        "description": "Read enable"
+      },
+      {
+        "name": "data_in",
+        "direction": "input",
+        "width": "32",
+        "description": "Input data"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "data_out",
+        "direction": "output",
+        "width": "32",
+        "description": "Output data"
+      },
+      {
+        "name": "full",
+        "direction": "output",
+        "width": "1",
+        "description": "FIFO full flag"
+      },
+      {
+        "name": "empty",
+        "direction": "output",
+        "width": "1",
+        "description": "FIFO empty flag"
+      }
+    ],
+    "parameters": {
+      "DATA_WIDTH": 32,
+      "DEPTH": 6
+    },
+    "functional_requirements": [
+      "Store 32-bit data values in FIFO order.",
+      "Support a configurable FIFO depth of 6.",
+      "Apply a synchronous reset that clears FIFO state and output data.",
+      "Accept writes only when the FIFO is not full.",
+      "Accept reads only when the FIFO is not empty.",
+      "Assert full when the FIFO contains its configured depth.",
+      "Assert empty when the FIFO contains no entries.",
+      "Support simultaneous accepted read and write operations."
+    ],
+    "corner_cases": [
+      "Read from an empty FIFO without changing state.",
+      "Write to a full FIFO without changing stored data.",
+      "Fill the FIFO to capacity.",
+      "Drain the FIFO to empty.",
+      "Assert reset while the FIFO contains data."
+    ],
+    "verification_requirements": [
+      "Verify FIFO ordering with multiple writes and reads.",
+      "Verify full and empty flags at their boundaries.",
+      "Verify overflow and underflow prevention.",
+      "Verify simultaneous read/write behavior.",
+      "Verify reset during active operation."
+    ],
+    "scenarios": [
+      "empty_underflow",
+      "single_write_read",
+      "full_and_overflow",
+      "drain_to_empty",
+      "simultaneous_read_write",
+      "reset_during_operation"
+    ],
+    "assertions": [
+      "full_and_empty_are_mutually_exclusive",
+      "read_does_not_change_empty_fifo",
+      "write_does_not_change_full_fifo"
+    ],
+    "coverage_targets": {
+      "functional_requirements": 100,
+      "corner_cases": 100,
+      "statement_coverage": "tool-measured",
+      "branch_coverage": "tool-measured"
+    }
+  },
+  "iterations": [
+    {
+      "iteration": 1,
+      "started_at": "2026-09-27T10:19:33.833603+00:00",
+      "completed_at": "2026-09-27T10:19:33.921938+00:00",
+      "duration_seconds": 0.088,
+      "rtl_path": "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_001\\rtl\\fifo.sv",
+      "testbench_path": "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_001\\tests\\tb_fifo.sv",
+      "simulation": {
+        "status": "FAIL",
+        "compile_returncode": 0,
+        "simulation_returncode": 1,
+        "timed_out": false,
+        "log_directory": "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_001\\simulation"
+      },
+      "coverage": null,
+      "debug": {
+        "failure_type": "simulation_assertion",
+        "likely_owner": "rtl_or_testbench",
+        "summary": "The simulation ran but reported a failure.",
+        "root_cause": "A self-checking testbench assertion or fatal condition was triggered.",
+        "proposed_action": "Compare expected and actual values in simulation.log, then generate a new corrective iteration.",
+        "evidence": "VCD info: dumpfile fifo_agent.vcd opened for output.\nFATAL: F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_001\\tests\\tb_fifo.sv:35: FAIL: full mismatch\n       Time: 16  Scope: tb_fifo.check_flags"
+      }
+    },
+    {
+      "iteration": 2,
+      "started_at": "2026-09-27T10:19:33.921957+00:00",
+      "completed_at": "2026-09-27T10:19:34.008493+00:00",
+      "duration_seconds": 0.087,
+      "rtl_path": "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_002\\rtl\\fifo.sv",
+      "testbench_path": "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_002\\tests\\tb_fifo.sv",
+      "simulation": {
+        "status": "PASS",
+        "compile_returncode": 0,
+        "simulation_returncode": 0,
+        "timed_out": false,
+        "log_directory": "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_002\\simulation"
+      },
+      "coverage": {
+        "measurement_type": "derived_test_scenario",
+        "percentage": 100.0,
+        "covered": [
+          "empty_underflow",
+          "single_write_read",
+          "full_and_overflow",
+          "drain_to_empty",
+          "simultaneous_read_write",
+          "reset_during_operation"
+        ],
+        "uncovered": [],
+        "coverage_path": "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_002\\coverage.json",
+        "breakdown": {
+          "functional": {
+            "status": "measured",
+            "type": "derived_test_scenario",
+            "percentage": 100.0,
+            "covered": [
+              "empty_underflow",
+              "single_write_read",
+              "full_and_overflow",
+              "drain_to_empty",
+              "simultaneous_read_write",
+              "reset_during_operation"
+            ],
+            "uncovered": [],
+            "note": "Generated from explicit FIFO scenario checks in the testbench."
+          },
+          "code": {
+            "status": "not_measured",
+            "type": "statement_branch",
+            "percentage": null,
+            "covered": [],
+            "uncovered": [],
+            "metrics": {},
+            "tool": null,
+            "note": "No HDL coverage tool is configured, so statement/branch coverage is not measured."
+          },
+          "assertion": {
+            "status": "not_measured",
+            "type": "property_assertion",
+            "percentage": null,
+            "covered": [],
+            "uncovered": [],
+            "metrics": {},
+            "tool": null,
+            "note": "Assertion/property coverage was not emitted by the selected simulator."
+          }
+        }
+      },
+      "debug": null
+    }
+  ],
+  "stopping_reason": "derived scenario coverage target reached; RTL code coverage still requires a coverage tool",
+  "started_at": "2026-09-27T10:19:33.832932+00:00",
+  "completed_at": "2026-09-27T10:19:34.008519+00:00",
+  "duration_seconds": 0.176,
+  "panel_summary": {
+    "title": "Agentic RTL Demo: fifo Design Loop",
+    "narrative": "This agentic RTL workflow turns a plain specification into an executable hardware design loop. It generated a fifo implementation, validated it with the selected simulator, and recovered from a real failing condition by tracing the root cause and producing a corrected iteration. The workflow stopped with reason: derived scenario coverage target reached; RTL code coverage still requires a coverage tool.",
+    "status": "PASS",
+    "iterations": 2,
+    "module": "fifo",
+    "coverage_note": "Derived scenario coverage is explicitly labeled as scenario-based coverage, not tool-driven RTL coverage."
+  },
+  "demo_highlights": [
+    "Converted a natural-language hardware spec into executable RTL and self-checking SystemVerilog tests.",
+    "Used a real compile-and-sim loop to catch a design failure before regenerating the corrected design.",
+    "Persisted each iteration as versioned artifacts so the debugging trail remains auditable.",
+    "Produced honest derived scenario coverage and a panel-ready narrative instead of fake metrics."
+  ],
+  "story_summary": "This agentic RTL workflow turns a plain specification into an executable hardware design loop. It generated a fifo implementation, validated it with the selected simulator, and recovered from a real failing condition by tracing the root cause and producing a corrected iteration. The workflow stopped with reason: derived scenario coverage target reached; RTL code coverage still requires a coverage tool.",
+  "agent_state": {
+    "phase": "summarize_results",
+    "intent": "Design, verify, and debug an RTL FIFO that matches the specification.",
+    "plan": [
+      "extract_requirements",
+      "generate_rtl",
+      "generate_testbench",
+      "compile_and_simulate",
+      "debug_if_needed",
+      "summarize_results"
+    ],
+    "next_action": "Write the final workflow report and demo summary.",
+    "observations": [
+      "Requirement extraction completed.",
+      "RTL iteration 1 generated.",
+      "RTL iteration 2 generated."
+    ]
+  }
+}</pre>
+        </body>
+        </html>
+        

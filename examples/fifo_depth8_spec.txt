@@ -1,0 +1,1 @@
+Build a 16-bit FIFO with depth 8. It must support synchronous reset, write enable, read enable, data input, data output, full and empty flags. Prevent overflow and underflow, maintain FIFO ordering during simultaneous read/write operations, and verify reset behavior during active transactions.

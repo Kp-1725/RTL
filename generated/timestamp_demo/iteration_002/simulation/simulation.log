@@ -1,0 +1,12 @@
+COMMAND:
+vvp F:\ieee workshop\agentic-rtl\generated\timestamp_demo\iteration_002\simulation\simulation.vvp
+
+RETURN CODE: 0
+
+STDOUT:
+VCD info: dumpfile fifo_agent.vcd opened for output.
+PASS: generated FIFO testbench completed (23 checks).
+ASSERTION_COVERAGE checks=0 passes=0
+F:\ieee workshop\agentic-rtl\generated\timestamp_demo\iteration_002\tests\tb_fifo.sv:105: $finish called at 236 (1s)
+
+STDERR:

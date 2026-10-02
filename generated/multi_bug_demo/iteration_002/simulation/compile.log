@@ -1,0 +1,9 @@
+COMMAND:
+iverilog -g2012 -Wall -s tb_fifo -o F:\ieee workshop\agentic-rtl\generated\multi_bug_demo\iteration_002\simulation\simulation.vvp F:\ieee workshop\agentic-rtl\generated\multi_bug_demo\iteration_002\rtl\fifo.sv F:\ieee workshop\agentic-rtl\generated\multi_bug_demo\iteration_002\tests\tb_fifo.sv
+
+RETURN CODE: 0
+
+STDOUT:
+
+STDERR:
+F:\ieee workshop\agentic-rtl\generated\multi_bug_demo\iteration_002\tests\tb_fifo.sv:91: warning: method function 'pop_front' is being called as a task.

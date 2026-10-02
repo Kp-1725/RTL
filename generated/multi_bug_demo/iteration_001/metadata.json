@@ -1,0 +1,11 @@
+{
+  "iteration": 1,
+  "module_name": "fifo",
+  "injected_faults": [
+    "broken_full_flag",
+    "invert_first_comparison"
+  ],
+  "rtl_path": "F:\\ieee workshop\\agentic-rtl\\generated\\multi_bug_demo\\iteration_001\\rtl\\fifo.sv",
+  "valid": true,
+  "compiler_returncode": 0
+}

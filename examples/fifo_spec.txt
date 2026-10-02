@@ -1,0 +1,6 @@
+> Build a **32-bit FIFO with depth 6**. 
+It must have **synchronous set, write enable, read enable, data input, data output, full and empty flags**.
+ Prevent overflow and underflow, correctly handle simultaneous read/write operations, maintain FIFO ordering, and 
+ test reset during operation. Ensure the FIFO correctly handles the **empty state, full state, and pointer 
+ wraparound** for a depth of 6.
+

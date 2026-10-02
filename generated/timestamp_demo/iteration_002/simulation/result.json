@@ -1,0 +1,24 @@
+{
+  "compile_returncode": 0,
+  "simulation_returncode": 0,
+  "status": "PASS",
+  "timed_out": false,
+  "compile_command": [
+    "iverilog",
+    "-g2012",
+    "-Wall",
+    "-s",
+    "tb_fifo",
+    "-o",
+    "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_002\\simulation\\simulation.vvp",
+    "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_002\\rtl\\fifo.sv",
+    "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_002\\tests\\tb_fifo.sv"
+  ],
+  "simulation_command": [
+    "vvp",
+    "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_002\\simulation\\simulation.vvp"
+  ],
+  "log_directory": "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_002\\simulation",
+  "executable_path": "F:\\ieee workshop\\agentic-rtl\\generated\\timestamp_demo\\iteration_002\\simulation\\simulation.vvp",
+  "created_at": "2026-09-27T10:19:34.006449+00:00"
+}

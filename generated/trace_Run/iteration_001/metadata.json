@@ -1,0 +1,8 @@
+{
+  "iteration": 1,
+  "module_name": "FIFO_32bit_6depth",
+  "injected_faults": [],
+  "rtl_path": "F:\\ieee workshop\\agentic-rtl\\generated\\trace_Run\\iteration_001\\rtl\\FIFO_32bit_6depth.sv",
+  "valid": false,
+  "compiler_returncode": 4
+}
